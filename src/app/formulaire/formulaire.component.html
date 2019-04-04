@@ -1,0 +1,25 @@
+{{title}}
+
+
+<form #formulaire="ngForm" (ngSubmit)="onSubmit()">
+  <pre>{{formulaire|json}}</pre>
+  <div class="form-group">
+    <input type="text" required placeholder="id" class="form-control" [(ngModel)]="model.id" name="id" />
+  </div>
+
+  <div class="form-group">
+      <input required #actionInput="ngModel" type="text" placeholder="action"  class="form-control" [(ngModel)]="model.action" name="action"/>
+    
+      <div [hidden]="actionInput.valid" > erreur</div>
+    </div>
+    {{actionInput.className}}
+    <div class="form-group"  class="form-control">
+        <select name=""  class="form-control" name="place" [(ngModel)]="model.place">
+          <option *ngFor="let item of places" [value]="item">
+            {{item}}
+          </option>
+
+        </select>
+      </div>
+      <button type="submit"  class="form-control">envoyer</button>
+</form>

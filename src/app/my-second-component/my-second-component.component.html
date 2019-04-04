@@ -1,0 +1,29 @@
+-Des exemples d'interpolations
+1+1 {{1+1}}
+{{name}}
+{{lastName}}
+{{(name+" "+lastName.length)}}
+
+-des exemples sur le property bindings
+<input type="text" [value]="title" />
+esuivalent a
+<input type="text" value="{{title}}" />
+
+initialiser un paragraphe
+<p [innerText]="title"></p>
+
+-exemple sur event bindings
+
+<button (click)="direBonjour()"> </button>
+
+-exemple de binding biderectionnels
+
+<input type="text" [(ngModel)]="title" />
+
+-exemple de directives
+<button (click)="toggle()">show/hide</button>
+<ul *ngIf="show"><li *ngFor="let item of values">{{item|uppercase}}</li></ul>
+
+-exemple de passage de parametres
+<input type="text" #thefield>
+<button (click)="log(thefield.value)"></button>
